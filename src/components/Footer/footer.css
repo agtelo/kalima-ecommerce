@@ -1,0 +1,37 @@
+/* Estilos generales */
+.bg-dark {
+	background-color: #fbfbfb !important;
+}
+
+.footer {
+	margin-top: 100px;
+}
+
+/* Media Queries */
+
+/* Mobile (hasta 600px) */
+@media (max-width: 600px) {
+	.footer .row {
+		text-align: center;
+	}
+	.social {
+		display: flex;
+		flex-direction: column;
+		justify-items: center;
+		align-items: center;
+	}
+}
+
+/* Tablet (entre 601px y 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+	.footer .row {
+		justify-content: center;
+	}
+}
+
+/* Desktop (más de 901px) */
+@media (min-width: 901px) {
+	.footer .row {
+		justify-content: space-between;
+	}
+}

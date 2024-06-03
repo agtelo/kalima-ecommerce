@@ -1,0 +1,23 @@
+.cart p {
+  font-weight: lighter;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 100px;
+}
+.cart-icon {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: flex-end;
+
+  margin-bottom: 20px;
+}
+
+.bi-bag-fill {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+
+.bi-bag-fill:hover {
+  color: rgb(96, 99, 98);
+}

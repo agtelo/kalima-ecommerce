@@ -1,0 +1,39 @@
+.stock {
+  align-items: center;
+  position: relative;
+  left: 80px;
+  color: rgb(0, 0, 0);
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity {
+  color: rgb(3, 3, 3);
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.btn-count {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  border: 0;
+  width: 40;
+  height: 30px;
+  text-align: center;
+}
+
+.btn-add-product {
+  border: none;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  text-transform: uppercase;
+}

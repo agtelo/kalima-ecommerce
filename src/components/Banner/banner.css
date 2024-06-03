@@ -1,0 +1,46 @@
+/* Estilos generales */
+.banner-item {
+	display: flex;
+	align-items: center;
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+.banner-item i {
+	font-size: 24px;
+}
+
+.banner-item p {
+	margin: 0;
+}
+
+/* Media Queries */
+
+/* Mobile (hasta 600px) */
+@media (max-width: 600px) {
+	.banner-item {
+		justify-content: center;
+		text-align: center;
+		display: block;
+	}
+
+	.banner-item i {
+		margin-right: 5px;
+	}
+}
+
+/* Tablet (entre 601px y 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+	.banner-item {
+		justify-content: flex-start;
+		text-align: left;
+	}
+}
+
+/* Desktop (más de 901px) */
+@media (min-width: 901px) {
+	.banner-item {
+		justify-content: flex-start;
+		text-align: left;
+	}
+}

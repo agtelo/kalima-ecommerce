@@ -1,0 +1,11 @@
+.tittle {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.tittle p {
+	font-size: 40px;
+	font-weight: lighter;
+	text-transform: uppercase;
+}
