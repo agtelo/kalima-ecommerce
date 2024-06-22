@@ -19,17 +19,20 @@ const ItemDetailContainer = () => {
 
 	return (
 		<>
-			<div className='h-full'>
+			<div className='container p-5'>
 				{loading ? (
-					<div className='loading'>
-						<div className='d-flex justify-content-center'>
-							<div className='spinner-border' role='status'>
-								<span className='visually-hidden'></span>
+					<div className='d-flex justify-content-center align-items-start mt-5 container vh-100 '>
+						<div className='text-center'>
+							<div className='spinner-border mt-5' role='status'>
+								<span className='visually-hidden '>Cargando ...</span>
+							</div>
+							<div className='mt-5'>
+								<p className=' fs-4 fw-lighter text-uppercase'>Cargando ...</p>
 							</div>
 						</div>
 					</div>
 				) : (
-					<div className='animate__animated animate__fadeIn'>
+					<div className='animate__animated animate__fadeIn  '>
 						<ItemDetail
 							key={id}
 							product_type={list.productType}

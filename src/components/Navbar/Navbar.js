@@ -22,10 +22,12 @@ function Navbar(props) {
 					<div className=''>
 						<Brand />
 					</div>
-					<div className='d-flex'>
-						{/* <CartWidget /> */}
+					<div className='d-flex align-items-center'>
+						<div className='d-lg-none ms-2 mt-4'>
+							<CartWidget />
+						</div>
 						<button
-							className='navbar-toggler'
+							className='navbar-toggler btn'
 							type='button'
 							data-bs-toggle='collapse'
 							data-bs-target='#navbarNav'
@@ -33,7 +35,7 @@ function Navbar(props) {
 							aria-expanded='false'
 							aria-label='Toggle navigation'
 						>
-							<svg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 512 512'>
+							<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 512 512'>
 								<path fill='#000000' d='M80 96h352v32H80zm0 144h352v32H80zm0 144h352v32H80z' />
 							</svg>
 						</button>
@@ -72,7 +74,11 @@ function Navbar(props) {
 								</>
 							)}
 						</div>
-						<CartWidget />
+						{/* Mostrar CartWidget en escritorio */}
+
+						<div className='d-none d-lg-block'>
+							<CartWidget />
+						</div>
 					</div>
 				</div>
 			</nav>

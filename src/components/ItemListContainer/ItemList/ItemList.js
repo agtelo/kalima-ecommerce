@@ -53,35 +53,37 @@ const ItemList = () => {
 
 	return (
 		<>
-			{category && (
-				<div className='tittle'>
-					<p className='animate__animated animate__fadeIn'>{category}</p>
-				</div>
-			)}
-			{loading && (
-				<div className='loading'>
-					<div className='d-flex justify-content-center'>
-						<div className='spinner-border' role='status'>
-							<span className='visually-hidden'></span>
+			<div className='tittle animate__animated animate__fadeIn mb-5 '>
+				<p className=''>{category}</p>
+			</div>
+			{loading ? (
+				<div className='d-flex justify-content-center align-items-start container vh-100 container'>
+					<div className='text-center'>
+						<div className='spinner-border mt-5' role='status'>
+							<span className='visually-hidden '>Cargando ...</span>
+						</div>
+						<div className='mt-5'>
+							<p className=' fs-4 fw-lighter text-uppercase'>Cargando ...</p>
 						</div>
 					</div>
 				</div>
+			) : (
+				<div className='container animate__animated animate__fadeIn '>
+					{list.map(item => (
+						<Item
+							key={item.id}
+							product_type={item.Product_type}
+							brand={item.Brand}
+							model={item.Model}
+							price={item.Price}
+							stock={item.Stock}
+							category={item.Category}
+							img_product={item.Img_product}
+							id={item.id}
+						/>
+					))}
+				</div>
 			)}
-			<div className='container animate__animated animate__fadeIn'>
-				{list.map(item => (
-					<Item
-						key={item.id}
-						product_type={item.Product_type}
-						brand={item.Brand}
-						model={item.Model}
-						price={item.Price}
-						stock={item.Stock}
-						category={item.Category}
-						img_product={item.Img_product}
-						id={item.id}
-					/>
-				))}
-			</div>
 		</>
 	)
 }

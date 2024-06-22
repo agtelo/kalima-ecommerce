@@ -18,7 +18,6 @@ import Section from './components/Section/Section'
 import Banner from './components/Banner/Banner'
 import CartMenu from './components/Cart/CartMenu'
 import Checkout from './components/Checkout/Checkout'
-import Confirmation from './components/Confirmation/Confirmation'
 import Discounts from './components/Discounts/Discounts'
 import Shipping from './components/Shipping/Shipping'
 
@@ -28,6 +27,7 @@ function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false)
 	const [user, setUser] = useState()
 
+	console.log(user)
 	useEffect(() => {
 		auth.onAuthStateChanged(
 			user => {
@@ -74,9 +74,6 @@ function App() {
 					</Route>
 					<Route path='/shipping' exact>
 						<Shipping />
-					</Route>
-					<Route path='/confirmation' exact>
-						<Confirmation />
 					</Route>
 					<PublicRoute
 						path='/register'

@@ -124,4 +124,7 @@
 		font-weight: lighter;
 		margin: 0px;
 	}
+	.product-description {
+		height: 320px;
+	}
 }

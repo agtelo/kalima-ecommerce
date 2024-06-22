@@ -76,7 +76,7 @@ export default function CartMenu() {
 							<p className='fw-light ms-3'>Tasas e impuestos incluidos en el carrito.</p>
 							<Link to='/cart' className='d-flex justify-content-center text-decoration-none'>
 								<button
-									className='btn-lg btn-dark text-uppercase w-100 rounded-0'
+									className='btn btn-lg btn-dark text-uppercase w-100 rounded-0'
 									onClick={updateQuantity}
 									data-bs-dismiss='offcanvas'
 								>

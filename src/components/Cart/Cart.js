@@ -5,7 +5,7 @@ import { CartContext } from '../../context/CartContext'
 import './cart.css'
 
 export default function Cart(props) {
-	const { cart, deleteItem, cleanCart, totalCart } = useContext(CartContext)
+	const { cart, deleteItem, totalCart } = useContext(CartContext)
 
 	const formatMoney = price => {
 		return price?.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.')
@@ -18,7 +18,7 @@ export default function Cart(props) {
 					<h2>El carrito de compras esta vacio.</h2>
 					<br />
 					<Link to='/'>
-						<button className='btn-lg btn-outline-dark'>Empezar a Comprar</button>
+						<button className='btn-lg btn-outline-dark btn'>Empezar a Comprar</button>
 					</Link>
 				</div>
 			) : (
@@ -50,19 +50,9 @@ export default function Cart(props) {
 									</div>
 								))}
 							</div>
-							{/* <div className='cart-empty-btn'>
-								<button
-									className='cart-empty-btn'
-									onClick={() => {
-										cleanCart()
-									}}
-								>
-									<p>Vaciar Carrito</p>
-								</button>
-							</div> */}
 						</div>
 						<div className='product-description-cart d-block d-md-flex d-lg-block '>
-							<div adadsclassName='col-lg-12 col-md-6'>
+							<div className='col-lg-12 col-md-6'>
 								<h3> Resumen de la compra</h3>
 								<br />
 								<div className=''>
@@ -88,7 +78,6 @@ export default function Cart(props) {
 							<br />
 						</div>
 					</div>
-					{}
 				</div>
 			)}
 		</>

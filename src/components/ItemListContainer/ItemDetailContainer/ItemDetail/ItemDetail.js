@@ -1,4 +1,4 @@
-import { React, useState, useContext } from 'react'
+import { React, useState, useContext, useEffect } from 'react'
 import ItemCount from '../../../ItemCount/ItemCount'
 import { CartContext } from '../../../../context/CartContext'
 import './itemDetail.css'
@@ -18,11 +18,18 @@ const ItemDetail = ({
 	const [buyButtonsVisible, setBuyButtonsVisible] = useState(true)
 	const [count, setCount] = useState(0)
 
-	const { addItem } = useContext(CartContext)
+	const { addItem, cart } = useContext(CartContext)
 
 	const onAdd = count => {
 		setCount(count)
 	}
+
+	useEffect(() => {
+		if (!cart || cart.length === 0) {
+			setItemCountVisible(true)
+			setBuyButtonsVisible(true)
+		}
+	}, [cart])
 
 	const onAddToCart = () => {
 		setItemCountVisible(false)
@@ -50,37 +57,36 @@ const ItemDetail = ({
 			<div className='details-container'>
 				<div className='product-detail-image '>
 					<img src={img_product} alt='' />
-					{itemCountVisible && <ItemCount stock={stock} onAdd={onAdd} />}
+					<div className={itemCountVisible ? 'visible' : 'invisible'}>
+						<ItemCount stock={stock} onAdd={onAdd} />
+					</div>
 				</div>
 				<div className='product-description '>
 					<div className='d-flex gap-2'>
 						<h3>{product_type}</h3>
 						<h3>{model}</h3>
 					</div>
-					<br />
 					<p className='mb-2'>${formatMoney(price)}</p>
 					<p className='product-detail-description'>{description}</p>
-					<br />
-
-					<div className='mt-5 col-md-12'>
+					<div className='mt-5 col-md-12 '>
 						{buyButtonsVisible && (
 							<>
 								<button
-									className='btn btn-dark col-md-12 col-12'
+									className='btn btn-dark col-md-12 col-12 text-uppercase'
 									onClick={onAddToCart}
 									count={count}
 								>
-									AGREGAR AL CARRITO
+									Agregar al carrito{' '}
 								</button>
 							</>
 						)}
 						{!buyButtonsVisible && (
 							<button
-								className='btn btn-dark col-md-12 col-12'
+								className='btn btn-dark col-md-12 col-12 text-uppercase'
 								data-bs-toggle='offcanvas'
 								data-bs-target='#offcanvasRight'
 							>
-								IR AL CARRITO
+								Ir al carrito
 							</button>
 						)}
 					</div>

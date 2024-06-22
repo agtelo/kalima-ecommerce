@@ -11,7 +11,7 @@ export default function CartCard({ price, quantity, type, model, img, productId 
 	}
 	return (
 		<>
-			<div className='d-flex mb-5'>
+			<div className='d-flex mb-5 gap-4'>
 				<div className='col-4 ms-2'>
 					<img src={img} alt='' className='w-100' />
 				</div>
